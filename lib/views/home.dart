@@ -112,17 +112,20 @@ class _HomeState extends State<Home> {
                 ],
               )),
           Flexible(
+            flex: 1,
+            child: Container(
+              child: const Center(
+                  child: Text(
+                'Synopsis',
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              )),
+            ),
+          ),
+          Flexible(
             flex: 4,
             child: ListView(
               padding: const EdgeInsets.all(8),
               children: <Widget>[
-                Container(
-                  child: const Center(
-                      child: Text(
-                    'Synopsis',
-                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-                  )),
-                ),
                 Container(
                   child: const Center(
                       child: Text(
