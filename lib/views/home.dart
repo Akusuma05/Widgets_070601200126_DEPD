@@ -122,28 +122,60 @@ class _HomeState extends State<Home> {
             ),
           ),
           Flexible(
-            flex: 4,
-            child: ListView(
-              padding: const EdgeInsets.all(8),
-              children: <Widget>[
-                Container(
-                  child: const Center(
-                      child: Text(
-                          'Tomoya Aki, an otaku, has been obsessed with collecting anime and light novels for years, attaching himself to various series with captivating stories and characters. Now, he wants to have a chance of providing the same experience for others by creating his own game, but unfortunately, Tomoya cannot do this task by himself. He successfully recruits childhood friend Eriri Spencer Sawamura to illustrate and literary elitist Utaha Kasumigaoka to write the script for his visual novel, while he directs. Super-group now in hand, Tomoya only needs an inspiration to base his project on, and luckily meets the beautiful, docile Megumi Katou, who he then models his main character after. Using what knowledge he has, Tomoya creates a new doujin circle with hopes to touch the hearts of those who play their game. What he does not realize, is that to invoke these emotions, the creators have had to experience the same feelings in their own lives.')),
-                ),
-                Container(
-                  child: const Center(
-                      child: Text(
-                          'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.')),
-                ),
-                Container(
-                  child: const Center(
-                      child: Text(
-                          'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.')),
-                ),
-              ],
-            ),
-          )
+              flex: 4,
+              child: Container(
+                width: double.infinity,
+                height: double.infinity,
+                child: Stack(children: [
+                  Container(
+                    child: ListView(
+                      padding: const EdgeInsets.all(8),
+                      children: <Widget>[
+                        Container(
+                          child: const Center(
+                              child: Text(
+                                  'Tomoya Aki, an otaku, has been obsessed with collecting anime and light novels for years, attaching himself to various series with captivating stories and characters. Now, he wants to have a chance of providing the same experience for others by creating his own game, but unfortunately, Tomoya cannot do this task by himself. He successfully recruits childhood friend Eriri Spencer Sawamura to illustrate and literary elitist Utaha Kasumigaoka to write the script for his visual novel, while he directs. Super-group now in hand, Tomoya only needs an inspiration to base his project on, and luckily meets the beautiful, docile Megumi Katou, who he then models his main character after. Using what knowledge he has, Tomoya creates a new doujin circle with hopes to touch the hearts of those who play their game. What he does not realize, is that to invoke these emotions, the creators have had to experience the same feelings in their own lives.')),
+                        ),
+                        Container(
+                          child: const Center(
+                              child: Text(
+                                  'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.')),
+                        ),
+                        Container(
+                          child: const Center(
+                              child: Text(
+                                  'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.')),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment(0.9, 0.8),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.all(0.0),
+                        elevation: 5,
+                      ),
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Login()));
+                      },
+                      child: Ink(
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              colors: [Colors.blue, Colors.cyan]),
+                        ),
+                        child: Container(
+                          padding: const EdgeInsets.all(10),
+                          constraints: const BoxConstraints(minWidth: 88.0),
+                          child: const Text('Book Now',
+                              textAlign: TextAlign.center),
+                        ),
+                      ),
+                    ),
+                  )
+                ]),
+              ))
         ]),
       ),
     );
